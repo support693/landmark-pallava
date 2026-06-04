@@ -1,0 +1,315 @@
+/* ── WhatsApp FAB ── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 32px rgba(37,211,102,0.5);
+}
+
+/* ── CTA Banner ── */
+.footer-cta-banner {
+  background: #C9A84C;
+  padding: 48px 60px;
+}
+
+.footer-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer-cta-title {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: clamp(1.3rem, 2.5vw, 2rem);
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.footer-cta-sub {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #1B2A4A;
+  text-decoration: none;
+  padding: 16px 44px;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+
+.footer-cta-btn:hover {
+  background: #1B2A4A;
+  color: #C9A84C;
+}
+
+/* ── Main Footer ── */
+.footer-main {
+  background: #ffffff;
+  border-top: 3px solid #C9A84C;
+  padding: 72px 60px 56px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+  gap: 48px;
+  max-width: 100%;
+}
+
+/* Brand column */
+.footer-logo {
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.footer-tagline {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e0d8cc;
+  color: #6b7280;
+  font-size: 0.65rem;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.social-icon:hover {
+  border-color: #C9A84C;
+  color: #C9A84C;
+  background: #fdf6e8;
+}
+
+/* Nav columns */
+.footer-col h4 {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col ul a {
+  color: #4a5568;
+  text-decoration: none;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.88rem;
+  transition: color 0.25s;
+}
+
+.footer-col ul a:hover { color: #C9A84C; }
+
+/* Contact list */
+.footer-contact li {
+  display: flex;
+  gap: 12px;
+  color: #4a5568;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.footer-contact li span { flex-shrink: 0; }
+.footer-contact a {
+  color: #4a5568;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-contact a:hover { color: #C9A84C; }
+
+/* ── Bottom bar ── */
+.footer-bottom {
+  background: #f5f0e8;
+  border-top: 1px solid #e8e0d0;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-bottom p {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer-bottom-links a:hover { color: #C9A84C; }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    padding: 56px 32px;
+  }
+  .footer-cta-banner { padding: 40px 32px; }
+  .footer-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-banner {
+    padding: 32px 24px;
+  }
+
+  .footer-cta-title {
+    font-size: 1.3rem;
+  }
+
+  .footer-cta-btn {
+    padding: 14px 28px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    padding: 40px 24px;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    padding: 18px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-main { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; text-align: center; padding: 20px 24px; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .footer-cta-banner {
+    padding: 28px 16px;
+  }
+
+  .footer-cta-inner {
+    gap: 20px;
+  }
+
+  .footer-main {
+    padding: 32px 16px;
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-cta-title {
+    font-size: 1.15rem;
+  }
+
+  .footer-cta-sub {
+    font-size: 0.82rem;
+  }
+
+  .footer-main {
+    padding: 28px 12px;
+  }
+}
+
+/* ── Extra-small: 320px ── */
+@media (max-width: 320px) {
+  .footer-cta-banner {
+    padding: 22px 10px;
+  }
+
+  .footer-cta-title {
+    font-size: 1rem;
+  }
+
+  .footer-cta-btn {
+    padding: 12px 16px;
+    font-size: 0.75rem;
+  }
+
+  .footer-main {
+    padding: 22px 10px;
+    gap: 18px;
+  }
+
+  .footer-logo {
+    height: 52px;
+  }
+
+  .footer-bottom {
+    padding: 14px 10px;
+  }
+
+  .whatsapp-fab {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}

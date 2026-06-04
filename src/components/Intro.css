@@ -1,0 +1,84 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ── Phases ── */
+.intro-enter {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.intro-exit {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+/* ── Logo container ── */
+.intro-logo-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  animation: logo-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes logo-rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Logo image ── */
+.intro-logo {
+  width: clamp(220px, 30vw, 380px);
+  object-fit: contain;
+  animation: logo-fade-in 1s ease 0.15s both;
+}
+
+@keyframes logo-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Gold sweep line under logo ── */
+.intro-line {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #C9A84C, transparent);
+  animation: line-expand 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+}
+
+@keyframes line-expand {
+  from { width: 0;    opacity: 0; }
+  to   { width: 240px; opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .intro-logo {
+    width: clamp(160px, 60vw, 260px);
+  }
+}
+
+@media (max-width: 320px) {
+  .intro-logo {
+    width: clamp(140px, 72vw, 200px);
+  }
+
+  .intro-logo-wrap {
+    gap: 20px;
+  }
+}

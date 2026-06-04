@@ -1,0 +1,28 @@
+/* Numbers (0–9) → Playfair Display. All other text stays in Georgia. */
+@font-face {
+  font-family: 'PallavaNum';
+  src: local('Playfair Display');
+  font-weight: 400 700;
+  unicode-range: U+0030-0039;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  background: #ffffff;
+  overflow-x: hidden;
+}

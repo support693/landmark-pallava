@@ -1,0 +1,140 @@
+.amenities {
+  background: #1B2A4A;
+  padding: 100px 0;
+}
+
+.amenities-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.amenities-intro {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.amenities .section-eyebrow { color: #C9A84C; }
+.amenities .section-heading { color: #ffffff; }
+.amenities .section-desc    { color: rgba(255,255,255,0.65); }
+
+/* ── Grid ── */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.amenity-card {
+  background: #1B2A4A;
+  padding: 40px 28px;
+  text-align: center;
+  transition: background 0.3s;
+  cursor: default;
+}
+
+.amenity-card:hover {
+  background: #243859;
+}
+
+.amenity-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.amenity-title {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #C9A84C;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.amenity-desc {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+  .amenities-inner { padding: 0 32px; }
+}
+
+@media (max-width: 768px) {
+  .amenities {
+    padding: 72px 0;
+  }
+
+  .amenities-inner {
+    padding: 0 20px;
+  }
+
+  .amenities-intro {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 700px) {
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .amenities {
+    padding: 56px 0;
+  }
+
+  .amenities-inner {
+    padding: 0 16px;
+  }
+
+  .amenities-intro {
+    margin-bottom: 32px;
+  }
+
+  .amenity-card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .amenities-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 360px) {
+  .amenities {
+    padding: 40px 0;
+  }
+}
+
+/* ── Extra-small: 320px ── */
+@media (max-width: 320px) {
+  .amenities {
+    padding: 32px 0;
+  }
+
+  .amenities-inner {
+    padding: 0 10px;
+  }
+
+  .amenities-intro {
+    margin-bottom: 24px;
+  }
+
+  .amenity-card {
+    padding: 22px 14px;
+  }
+
+  .amenity-title {
+    font-size: 0.9rem;
+  }
+
+  .amenity-desc {
+    font-size: 0.78rem;
+  }
+}

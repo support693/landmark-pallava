@@ -1,0 +1,302 @@
+.testimonials {
+  background: #f9f7f4;
+  padding: 100px 0;
+}
+
+.testimonials-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.testimonials-sub {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* Score row */
+.testi-score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.score-num {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 3.5rem;
+  color: #1B2A4A;
+  line-height: 1;
+}
+
+.stars {
+  color: #C9A84C;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  letter-spacing: 0.05em;
+}
+
+/* Controls */
+.testi-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.testi-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #C9A84C;
+  background: transparent;
+  color: #C9A84C;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+}
+
+.testi-arrow:hover {
+  background: #C9A84C;
+  color: #fff;
+}
+
+.testi-count {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  min-width: 40px;
+  text-align: center;
+}
+
+/* ── Review Card ── */
+.testi-card {
+  background: #ffffff;
+  border: 1px solid #e8e0d0;
+  padding: 48px 44px;
+  position: relative;
+  animation: fade-in-up 0.4s ease both;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.testi-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 36px;
+  font-size: 6rem;
+  line-height: 1;
+  color: #f0ece4;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  pointer-events: none;
+}
+
+.testi-stars {
+  color: #C9A84C;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.testi-text {
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.85;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1px solid #f0ece4;
+  padding-top: 24px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1B2A4A;
+  color: #C9A84C;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+.author-info strong {
+  display: block;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.95rem;
+  color: #1B2A4A;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+
+.author-info span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  font-family: 'PallavaNum', 'Georgia', serif;
+}
+
+/* Dots */
+.testi-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.testi-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #d1ccc0;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.testi-dot.active {
+  background: #C9A84C;
+  transform: scale(1.3);
+}
+
+@media (max-width: 900px) {
+  .testimonials-inner {
+    grid-template-columns: 1fr;
+    padding: 0 32px;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    padding: 72px 0;
+  }
+
+  .testimonials-inner {
+    padding: 0 24px;
+    gap: 36px;
+  }
+
+  .testi-card {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 56px 0;
+  }
+
+  .testimonials-inner {
+    padding: 0 16px;
+    gap: 28px;
+  }
+
+  .testi-card {
+    padding: 28px 20px;
+  }
+
+  .testi-card::before {
+    font-size: 4rem;
+    top: 14px;
+    left: 20px;
+  }
+
+  .testi-text {
+    font-size: 0.95rem;
+  }
+
+  .score-num {
+    font-size: 2.8rem;
+  }
+
+  .testi-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .testimonials-inner {
+    padding: 0 12px;
+  }
+
+  .testi-card {
+    padding: 22px 16px;
+  }
+
+  .testi-author {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* ── Extra-small: 320px ── */
+@media (max-width: 320px) {
+  .testimonials {
+    padding: 40px 0;
+  }
+
+  .testimonials-inner {
+    padding: 0 8px;
+    gap: 20px;
+  }
+
+  .testi-card {
+    padding: 18px 12px;
+  }
+
+  .testi-text {
+    font-size: 0.88rem;
+    line-height: 1.75;
+  }
+
+  .score-num {
+    font-size: 2.2rem;
+  }
+
+  .testi-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+
+  .testi-card::before {
+    font-size: 3rem;
+    top: 10px;
+    left: 14px;
+  }
+}

@@ -1,0 +1,408 @@
+.bp-wrapper { background:#f9f7f4; min-height:100vh; font-family:'PallavaNum','Georgia',serif; }
+
+/* ── Navbar ── */
+.bp-nav {
+  position:sticky; top:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 60px; background:#fff; box-shadow:0 2px 16px rgba(0,0,0,.08);
+}
+.bp-nav-logo { height:58px; object-fit:contain; }
+.bp-nav-center { display:flex; gap:8px; align-items:center; font-size:.78rem; color:#9ca3af; }
+.bp-nav-center a { color:#6b7280; text-decoration:none; transition:color .2s; }
+.bp-nav-center a:hover { color:#C9A84C; }
+.bp-nav-center span:last-child { color:#C9A84C; }
+.bp-nav-help { font-size:.8rem; color:#1B2A4A; text-decoration:none; letter-spacing:.06em; transition:color .2s; }
+.bp-nav-help:hover { color:#C9A84C; }
+
+/* ── Layout ── */
+.bp-layout {
+  display:grid; grid-template-columns:1fr 380px;
+  gap:32px; padding:40px 60px 80px;
+  max-width:1300px; margin:0 auto; align-items:start;
+}
+
+/* ── Step Indicator ── */
+.bp-steps {
+  display:flex; align-items:center; margin-bottom:32px;
+}
+.bp-step {
+  display:flex; align-items:center; gap:10px; flex:1;
+}
+.bp-step-circle {
+  width:36px; height:36px; border-radius:50%;
+  border:2px solid #e0d8cc; background:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:.82rem; color:#9ca3af; flex-shrink:0;
+  transition:all .3s;
+}
+.bp-step.active .bp-step-circle { border-color:#C9A84C; background:#C9A84C; color:#fff; }
+.bp-step.done  .bp-step-circle { border-color:#1B2A4A; background:#1B2A4A; color:#fff; }
+.bp-step span { font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:#9ca3af; white-space:nowrap; }
+.bp-step.active span { color:#1B2A4A; font-weight:600; }
+.bp-step.done  span { color:#6b7280; }
+.bp-step-line { flex:1; height:1px; background:#e0d8cc; margin:0 12px; }
+
+/* ── Panel ── */
+.bp-panel { background:#fff; border:1px solid #ede8de; padding:36px; }
+.bp-panel-title { font-size:1.3rem; font-weight:400; color:#1B2A4A; margin-bottom:28px; padding-bottom:14px; border-bottom:1px solid #f0ece4; }
+
+/* ── Fields ── */
+.bp-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; }
+.bp-field { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
+.bp-field label { font-size:.65rem; letter-spacing:.24em; text-transform:uppercase; color:#C9A84C; }
+.bp-field input,
+.bp-field select,
+.bp-field textarea {
+  border:1.5px solid #e0d8cc; padding:12px 14px;
+  font-family:'PallavaNum','Georgia',serif; font-size:.9rem; color:#1B2A4A;
+  outline:none; transition:border-color .25s; background:#fff;
+  border-radius:2px;
+}
+.bp-field input:focus,
+.bp-field select:focus,
+.bp-field textarea:focus { border-color:#C9A84C; }
+.bp-field textarea { resize:vertical; }
+.bp-field-note { font-size:.72rem; color:#9ca3af; margin-top:2px; }
+.bp-optional { color:#9ca3af; font-size:.7rem; text-transform:none; letter-spacing:0; }
+
+/* Stepper */
+.bp-stepper { display:flex; align-items:center; border:1.5px solid #e0d8cc; width:fit-content; border-radius:2px; overflow:hidden; }
+.bp-stepper button { width:44px; height:44px; border:none; background:#faf9f7; font-size:1.2rem; color:#C9A84C; cursor:pointer; transition:background .2s; }
+.bp-stepper button:hover { background:#f0ece4; }
+.bp-stepper span { padding:0 20px; font-family:'PallavaNum','Georgia',serif; font-size:.92rem; color:#1B2A4A; white-space:nowrap; }
+
+/* Stay summary */
+.bp-stay-summary { background:#faf9f7; border:1px solid #ede8de; padding:18px 20px; margin:16px 0 24px; }
+.bp-stay-row { display:flex; justify-content:space-between; font-size:.88rem; color:#4a5568; padding:5px 0; }
+.bp-stay-row strong { color:#1B2A4A; }
+
+/* ── Date chips (Step 0 header) ── */
+.bp-date-chips {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.bp-date-chip {
+  flex: 1;
+  border: 1.5px solid #e0d8cc;
+  padding: 10px 14px;
+  background: #faf9f7;
+  transition: border-color .2s, background .2s;
+}
+.bp-date-chip.set { border-color: #C9A84C; background: #fff; }
+.bp-date-chip-label {
+  display: block; font-size: .58rem;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: #9ca3af; margin-bottom: 3px;
+}
+.bp-date-chip-val {
+  display: block; font-size: .85rem;
+  color: #1B2A4A; font-family: 'PallavaNum','Georgia',serif;
+}
+.bp-date-chip-arrow { color: #C9A84C; font-size: 1.1rem; flex-shrink: 0; }
+
+/* ── Inline calendar ── */
+.bp-calendar-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.bp-calendar-wrap .react-datepicker,
+.bp-calendar-wrap .pallava-calendar.react-datepicker {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+  box-shadow: 0 4px 20px rgba(27,42,74,.1);
+  border-radius: 4px;
+}
+.bp-calendar-wrap .react-datepicker__month-container {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+}
+.bp-calendar-wrap .react-datepicker__day-name,
+.bp-calendar-wrap .react-datepicker__day {
+  flex: 1; width: auto !important;
+  min-width: unset !important; max-width: unset !important;
+}
+
+/* ── Dates banner (Step 1 & 2 top strip) ── */
+.bp-dates-banner {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #f5f0e8; border: 1px solid #e8dfc8;
+  padding: 10px 16px; margin-bottom: 24px;
+  font-size: .84rem; color: #4a5568; gap: 12px; flex-wrap: wrap;
+}
+.bp-dates-change {
+  font-size: .72rem; color: #C9A84C; text-decoration: none;
+  border: none; background: transparent; cursor: pointer;
+  letter-spacing: .08em; font-family: 'PallavaNum','Georgia',serif;
+  padding: 0; transition: opacity .2s; white-space: nowrap;
+}
+.bp-dates-change:hover { opacity: .7; }
+
+/* ── Summary room image ── */
+.bp-summary-img-wrap {
+  width: 100%; aspect-ratio: 4/3; overflow: hidden;
+}
+.bp-summary-img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* Buttons */
+.bp-next-btn {
+  width:100%; padding:16px; background:#C9A84C; color:#fff; border:none;
+  font-family:'PallavaNum','Georgia',serif; font-size:.85rem; letter-spacing:.2em; text-transform:uppercase;
+  font-weight:700; cursor:pointer; transition:background .3s;
+}
+.bp-next-btn:hover:not(:disabled) { background:#b8933f; }
+.bp-next-btn:disabled { background:#e0d8cc; cursor:not-allowed; color:#9ca3af; }
+.bp-btn-row { display:flex; gap:12px; margin-top:8px; }
+.bp-back-btn {
+  padding:16px 28px; background:transparent; color:#6b7280;
+  border:1.5px solid #e0d8cc; font-family:'PallavaNum','Georgia',serif; font-size:.82rem;
+  letter-spacing:.12em; text-transform:uppercase; cursor:pointer; transition:all .25s;
+}
+.bp-back-btn:hover { border-color:#1B2A4A; color:#1B2A4A; }
+
+/* ── Payment ── */
+.bp-pay-methods { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+.bp-pay-tile {
+  display:flex; align-items:center; gap:16px; padding:16px 20px;
+  border:1.5px solid #e0d8cc; cursor:pointer; transition:all .25s; background:#fff;
+}
+.bp-pay-tile:hover { border-color:#C9A84C; background:#fdfaf4; }
+.bp-pay-tile.active { border-color:#C9A84C; background:#fdfaf4; }
+.bp-pay-icon { font-size:1.6rem; }
+.bp-pay-label { font-size:.92rem; color:#1B2A4A; margin-bottom:2px; }
+.bp-pay-sub { font-size:.75rem; color:#9ca3af; }
+.bp-pay-radio { width:20px; height:20px; border-radius:50%; border:2px solid #e0d8cc; margin-left:auto; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+.bp-pay-tile.active .bp-pay-radio { border-color:#C9A84C; }
+.bp-pay-radio-dot { width:10px; height:10px; border-radius:50%; background:#C9A84C; }
+
+.bp-pay-form { margin-bottom:20px; }
+.bp-secure-badge {
+  display:flex; align-items:center; gap:8px; justify-content:center;
+  font-size:.78rem; color:#6b7280; background:#f9f7f4; border:1px solid #ede8de;
+  padding:12px; margin-bottom:20px;
+}
+.bp-pay-btn {
+  flex:1; padding:16px; background:#1B2A4A; color:#fff; border:none;
+  font-family:'PallavaNum','Georgia',serif; font-size:.88rem; letter-spacing:.18em; text-transform:uppercase;
+  font-weight:700; cursor:pointer; transition:background .3s;
+}
+.bp-pay-btn:hover { background:#C9A84C; }
+
+/* ── Summary Sidebar ── */
+.bp-summary { position:sticky; top:88px; }
+.bp-summary-inner { background:#fff; border:1px solid #ede8de; overflow:hidden; margin-bottom:16px; }
+.bp-summary-visual {
+  height:160px; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:8px; color:rgba(255,255,255,.5);
+}
+.bp-summary-visual span { font-size:2rem; }
+.bp-summary-visual p { font-size:.8rem; letter-spacing:.1em; }
+.bp-summary-body { padding:24px; }
+.bp-summary-room { font-size:1.15rem; font-weight:400; color:#1B2A4A; margin-bottom:4px; }
+.bp-summary-view { font-size:.78rem; color:#9ca3af; margin-bottom:20px; }
+
+.bp-summary-dates { display:flex; align-items:center; gap:8px; margin-bottom:16px; }
+.bp-sdate { flex:1; }
+.bp-sdate-label { display:block; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:#C9A84C; margin-bottom:4px; }
+.bp-sdate-val { font-size:.88rem; color:#1B2A4A; font-weight:600; }
+.bp-sdate-arrow { color:#C9A84C; font-size:1rem; }
+
+.bp-summary-divider { height:1px; background:#f0ece4; margin:14px 0; }
+
+.bp-price-breakdown { display:flex; flex-direction:column; gap:10px; }
+.bp-pb-row { display:flex; justify-content:space-between; font-size:.85rem; color:#6b7280; }
+.bp-pb-total { display:flex; justify-content:space-between; font-size:1.05rem; color:#1B2A4A; font-weight:600; }
+
+.bp-summary-perks { margin-top:16px; display:flex; flex-direction:column; gap:6px; }
+.bp-perk { font-size:.78rem; color:#6b7280; display:flex; align-items:center; gap:6px; }
+
+.bp-help-card { background:#1B2A4A; padding:20px 24px; display:flex; flex-direction:column; gap:8px; }
+.bp-help-card p { font-size:.7rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.15em; }
+.bp-help-card a { color:#C9A84C; text-decoration:none; font-size:.88rem; transition:opacity .2s; }
+.bp-help-card a:hover { opacity:.8; }
+
+/* ── Booked note ── */
+.bp-booked-note {
+  font-size:.72rem; color:#9ca3af; margin:-8px 0 16px;
+  display:flex; align-items:center; gap:6px;
+}
+
+/* ── Confirm summary (Step 2) ── */
+.bp-confirm-summary {
+  background:#faf9f7; border:1px solid #ede8de;
+  padding:20px 24px; margin-bottom:24px;
+}
+.bp-cs-section { margin-bottom:10px; }
+.bp-cs-row { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:10px; }
+.bp-cs-head { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:#C9A84C; margin-bottom:3px; }
+.bp-cs-val  { font-size:.92rem; color:#1B2A4A; font-weight:400; }
+.bp-cs-sub  { font-size:.78rem; color:#9ca3af; margin-top:2px; }
+.bp-cs-divider { height:1px; background:#f0ece4; margin:12px 0; }
+.bp-cs-price-rows { display:flex; flex-direction:column; gap:7px; }
+.bp-cs-price-row { display:flex; justify-content:space-between; font-size:.84rem; color:#4a5568; }
+.bp-cs-price-total { display:flex; justify-content:space-between; font-size:1rem; font-weight:600; color:#1B2A4A; padding-top:10px; border-top:1px solid #e0d8cc; margin-top:6px; }
+
+/* ── WhatsApp note & button ── */
+.bp-wa-note {
+  font-size:.82rem; color:#6b7280; line-height:1.7;
+  margin-bottom:20px; text-align:center;
+}
+.bp-wa-btn {
+  width:100%; padding:18px;
+  background:#25D366; color:#fff; border:none;
+  font-family:'PallavaNum','Georgia',serif; font-size:.92rem;
+  letter-spacing:.06em; font-weight:700; cursor:pointer;
+  transition:background .3s; border-radius:2px;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.bp-wa-btn:hover:not(:disabled) { background:#1ebe5d; }
+.bp-wa-btn:disabled { background:#a8e6bc; cursor:not-allowed; }
+
+/* ── Confirmation ── */
+.bp-confirm-wrapper { background:#f9f7f4; min-height:100vh; font-family:'PallavaNum','Georgia',serif; }
+.bp-confirm-box { max-width:600px; margin:60px auto; text-align:center; padding:0 24px 80px; }
+.bp-confirm-icon {
+  width:80px; height:80px; border-radius:50%; background:#C9A84C; color:#fff;
+  font-size:2rem; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 24px;
+}
+.bp-confirm-box h1 { font-size:2.2rem; font-weight:400; color:#1B2A4A; margin-bottom:12px; }
+.bp-confirm-sub { font-size:.95rem; color:#6b7280; line-height:1.8; margin-bottom:36px; }
+.bp-confirm-card { background:#fff; border:1px solid #ede8de; padding:28px; text-align:left; margin-bottom:32px; }
+.bp-confirm-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid #f5f0e8; font-size:.9rem; color:#6b7280; }
+.bp-confirm-row strong { color:#1B2A4A; }
+.bp-confirm-row.total { border-bottom:none; padding-top:16px; font-size:1.05rem; }
+.bp-confirm-row.total span,.bp-confirm-row.total strong { color:#1B2A4A; font-weight:700; }
+.bp-confirm-actions { display:flex; gap:12px; justify-content:center; }
+.bp-confirm-home {
+  text-decoration:none; padding:14px 32px; background:#1B2A4A; color:#fff;
+  font-family:'PallavaNum','Georgia',serif; font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; transition:background .3s;
+}
+.bp-confirm-home:hover { background:#C9A84C; }
+.bp-confirm-call {
+  text-decoration:none; padding:14px 32px; background:transparent; color:#C9A84C;
+  border:2px solid #C9A84C; font-family:'PallavaNum','Georgia',serif; font-size:.82rem; letter-spacing:.16em; text-transform:uppercase; transition:all .3s;
+}
+.bp-confirm-call:hover { background:#C9A84C; color:#fff; }
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .bp-layout { grid-template-columns:1fr; padding:28px 24px; }
+  .bp-summary { position:static; }
+  .bp-nav { padding:12px 32px; }
+}
+
+@media(max-width:768px){
+  .bp-nav { padding:12px 20px; }
+  .bp-nav-center { display:none; }
+
+  .bp-layout { padding:24px 16px; gap:24px; }
+
+  .bp-panel { padding:24px 20px; }
+
+  .bp-steps {
+    gap: 4px;
+  }
+
+  .bp-step {
+    gap: 6px;
+  }
+
+  .bp-step span {
+    font-size:.68rem;
+    letter-spacing:.05em;
+  }
+
+  .bp-step-circle {
+    width:30px;
+    height:30px;
+    font-size:.75rem;
+  }
+
+  .bp-step-line { margin:0 6px; }
+
+  .bp-row { grid-template-columns:1fr 1fr; gap:12px; }
+
+  .bp-btn-row { flex-direction:column; }
+  .bp-back-btn { width:100%; text-align:center; }
+
+  .bp-cs-row { grid-template-columns:repeat(2,1fr); }
+
+  .bp-summary-dates { flex-wrap:wrap; }
+}
+
+@media(max-width:600px){
+  .bp-nav { padding:12px 20px; }
+  .bp-nav-center { display:none; }
+  .bp-steps .bp-step span { display:none; }
+}
+
+@media(max-width:480px){
+  .bp-nav { padding:10px 16px; }
+  .bp-nav-logo { height:46px; }
+
+  .bp-layout { padding:16px 12px; }
+
+  .bp-panel { padding:20px 16px; }
+
+  .bp-row { grid-template-columns:1fr; }
+
+  .bp-steps { margin-bottom:20px; }
+
+  .bp-step-circle {
+    width:28px;
+    height:28px;
+    font-size:.7rem;
+  }
+
+  .bp-pay-methods { gap:8px; }
+  .bp-pay-tile { padding:14px 14px; gap:12px; }
+
+  .bp-cs-row { grid-template-columns:repeat(2,1fr); gap:10px; }
+
+  .bp-confirm-actions { flex-direction:column; align-items:center; gap:10px; }
+  .bp-confirm-home,.bp-confirm-call { width:100%; max-width:280px; text-align:center; }
+}
+
+@media(max-width:360px){
+  .bp-layout { padding:12px 8px; }
+  .bp-panel { padding:16px 12px; }
+  .bp-panel-title { font-size:1.1rem; }
+}
+
+/* ── Extra-small: 320px ── */
+@media(max-width:320px){
+  .bp-nav { padding:8px 10px; }
+  .bp-nav-logo { height:42px; }
+  .bp-nav-help { font-size:.7rem; }
+
+  .bp-layout { padding:10px 6px; gap:16px; }
+
+  .bp-panel { padding:14px 10px; }
+  .bp-panel-title { font-size:1rem; margin-bottom:20px; }
+
+  .bp-step-circle { width:24px; height:24px; font-size:.68rem; }
+  .bp-step-line { margin:0 4px; }
+
+  .bp-row { grid-template-columns:1fr; }
+
+  .bp-cs-row { grid-template-columns:1fr 1fr; gap:8px; }
+
+  .bp-stepper button { width:38px; height:38px; }
+
+  .bp-date-chips { flex-direction:column; gap:8px; }
+  .bp-date-chip-arrow { display:none; }
+
+  .bp-summary-body { padding:16px; }
+  .bp-summary-room { font-size:1rem; }
+
+  .bp-confirm-box { margin:40px auto; padding:0 14px 60px; }
+  .bp-confirm-box h1 { font-size:1.6rem; }
+  .bp-confirm-card { padding:20px 14px; }
+}

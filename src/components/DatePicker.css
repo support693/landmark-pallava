@@ -1,0 +1,218 @@
+/* ── Input field ── */
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker__input-container input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.92rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.react-datepicker__input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.react-datepicker-popper {
+  z-index: 9999 !important;
+}
+
+/* ── Calendar popup ── */
+.pallava-calendar.react-datepicker {
+  background: #ffffff;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18), 0 4px 16px rgba(0,0,0,0.08);
+  font-family: 'PallavaNum', 'Georgia', serif;
+  overflow: hidden;
+  padding: 0;
+  width: 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+}
+
+.pallava-calendar .react-datepicker__month-container {
+  width: 320px !important;
+  min-width: 320px !important;
+  max-width: 320px !important;
+  float: none;
+}
+
+/* Hide default triangle arrow */
+.react-datepicker__triangle {
+  display: none !important;
+}
+
+/* ── Header ── */
+.pallava-calendar .react-datepicker__header {
+  background: #1B2A4A;
+  border-bottom: none;
+  padding: 20px 20px 12px;
+  border-radius: 0;
+}
+
+.pallava-calendar .react-datepicker__current-month {
+  color: #ffffff;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+/* Prev / Next arrows */
+.pallava-calendar .react-datepicker__navigation {
+  top: 18px;
+}
+
+.pallava-calendar .react-datepicker__navigation-icon::before {
+  border-color: #C9A84C;
+  border-width: 2px 2px 0 0;
+  width: 8px;
+  height: 8px;
+}
+
+.pallava-calendar .react-datepicker__navigation:hover .react-datepicker__navigation-icon::before {
+  border-color: #E8C97A;
+}
+
+/* Day names */
+.pallava-calendar .react-datepicker__day-names {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0 12px;
+}
+
+.pallava-calendar .react-datepicker__day-name {
+  color: #C9A84C;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 34px;
+  min-width: 34px;
+  max-width: 34px;
+  line-height: 34px;
+  text-align: center;
+  flex: 1;
+}
+
+/* ── Days grid ── */
+.pallava-calendar .react-datepicker__month {
+  margin: 8px 12px 14px;
+}
+
+.pallava-calendar .react-datepicker__week {
+  display: flex;
+  justify-content: space-around;
+}
+
+.pallava-calendar .react-datepicker__day {
+  color: #1B2A4A;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  font-size: 0.85rem;
+  width: 34px;
+  min-width: 34px;
+  max-width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 50%;
+  margin: 2px 0;
+  text-align: center;
+  flex: 1;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pallava-calendar .react-datepicker__day:hover {
+  background: #f5f0e8;
+  border-radius: 50%;
+  color: #1B2A4A;
+}
+
+/* Selected day */
+.pallava-calendar .react-datepicker__day--selected,
+.pallava-calendar .react-datepicker__day--range-start,
+.pallava-calendar .react-datepicker__day--range-end {
+  background: #C9A84C !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  font-weight: 600;
+}
+
+/* In-range days */
+.pallava-calendar .react-datepicker__day--in-range {
+  background: #f5efd6;
+  color: #1B2A4A;
+  border-radius: 0;
+}
+
+.pallava-calendar .react-datepicker__day--range-start {
+  border-radius: 50% 0 0 50% !important;
+}
+
+.pallava-calendar .react-datepicker__day--range-end {
+  border-radius: 0 50% 50% 0 !important;
+}
+
+.pallava-calendar .react-datepicker__day--in-selecting-range {
+  background: #f5efd6 !important;
+  color: #1B2A4A !important;
+}
+
+/* Today */
+.pallava-calendar .react-datepicker__day--today {
+  font-weight: 700;
+  color: #C9A84C;
+}
+
+/* Disabled / outside month */
+.pallava-calendar .react-datepicker__day--disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.pallava-calendar .react-datepicker__day--outside-month {
+  color: #d1d5db;
+}
+
+/* ── Keyboard focus ── */
+.pallava-calendar .react-datepicker__day:focus {
+  outline: 2px solid #C9A84C;
+  outline-offset: 1px;
+}
+
+/* ── Responsive: prevent overflow on very small screens ── */
+@media (max-width: 360px) {
+  .pallava-calendar.react-datepicker {
+    width: calc(100vw - 20px) !important;
+    min-width: unset !important;
+    max-width: calc(100vw - 20px) !important;
+  }
+
+  .pallava-calendar .react-datepicker__month-container {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+  }
+
+  .pallava-calendar .react-datepicker__day-name,
+  .pallava-calendar .react-datepicker__day {
+    width: auto !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    flex: 1;
+  }
+
+  .react-datepicker-popper {
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: calc(100vw - 20px) !important;
+  }
+}

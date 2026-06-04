@@ -1,0 +1,358 @@
+/* ─── Variables ─── */
+:root { --gold:#C9A84C; --navy:#1B2A4A; --navy-dark:#0D1829; }
+
+.rp-wrapper { background:#fff; min-height:100vh; font-family:'PallavaNum','Georgia',serif; }
+
+/* ─── Navbar ─── */
+.rp-nav {
+  position: sticky; top:0; z-index:200;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 60px;
+  background:#fff; box-shadow:0 2px 16px rgba(0,0,0,.08);
+}
+.rp-nav-logo { height:60px; object-fit:contain; }
+.rp-nav-links { display:flex; list-style:none; gap:32px; }
+.rp-nav-links a { color:#1B2A4A; text-decoration:none; font-size:.85rem; letter-spacing:.1em; text-transform:uppercase; transition:color .25s; }
+.rp-nav-links a:hover,.rp-nav-links a.active { color:#C9A84C; }
+.rp-book-btn { background:#C9A84C; color:#fff; text-decoration:none; padding:10px 26px; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; border:2px solid #C9A84C; transition:all .3s; }
+.rp-book-btn:hover { background:transparent; color:#C9A84C; }
+
+/* ─── Page Hero ─── */
+.rp-hero {
+  position:relative; height:340px;
+  background:linear-gradient(135deg,#0D1829 0%,#1B2A4A 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+}
+.rp-hero-overlay { position:absolute; inset:0; background:rgba(13,24,41,.55); }
+.rp-hero-content { position:relative; z-index:1; }
+.rp-eyebrow { font-size:.7rem; letter-spacing:.4em; text-transform:uppercase; color:#C9A84C; margin-bottom:12px; }
+.rp-hero-title { font-size:clamp(2.2rem,5vw,4rem); font-weight:400; color:#fff; margin-bottom:14px; }
+.rp-hero-title .gold { color:#C9A84C; }
+.rp-hero-sub { font-size:.95rem; color:rgba(255,255,255,.7); max-width:560px; line-height:1.8; }
+.rp-hero-breadcrumb {
+  position:absolute; bottom:20px; left:60px; z-index:1;
+  display:flex; gap:8px; align-items:center;
+  font-size:.75rem; color:rgba(255,255,255,.5);
+}
+.rp-hero-breadcrumb a { color:rgba(255,255,255,.6); text-decoration:none; transition:color .2s; }
+.rp-hero-breadcrumb a:hover { color:#C9A84C; }
+.rp-hero-breadcrumb span:last-child { color:#C9A84C; }
+
+/* ─── Filter Bar ─── */
+.rp-filter-bar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:28px 60px; border-bottom:1px solid #f0ece4; background:#faf9f7;
+}
+.rp-categories { display:flex; gap:8px; flex-wrap:wrap; }
+.rp-cat-btn {
+  padding:9px 22px; border:1.5px solid #e0d8cc; background:transparent;
+  font-family:'PallavaNum','Georgia',serif; font-size:.78rem; letter-spacing:.1em;
+  text-transform:uppercase; color:#6b7280; cursor:pointer; transition:all .25s;
+  border-radius:2px;
+}
+.rp-cat-btn:hover { border-color:#C9A84C; color:#C9A84C; }
+.rp-cat-btn.active { background:#C9A84C; border-color:#C9A84C; color:#fff; }
+
+.rp-sort { display:flex; align-items:center; gap:10px; }
+.rp-sort label { font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:#9ca3af; }
+.rp-sort select {
+  border:1.5px solid #e0d8cc; background:#fff; padding:8px 14px;
+  font-family:'PallavaNum','Georgia',serif; font-size:.85rem; color:#1B2A4A;
+  outline:none; cursor:pointer; border-radius:2px;
+}
+
+/* ─── Results count ─── */
+.rp-results-info {
+  display:flex; align-items:center; gap:20px;
+  padding:20px 60px 0;
+}
+.rp-results-info p { font-size:.8rem; color:#9ca3af; font-family:'PallavaNum','Georgia',serif; white-space:nowrap; }
+.rp-results-line { flex:1; height:1px; background:#f0ece4; }
+
+/* ─── Room Grid ─── */
+.rp-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:32px; padding:32px 60px 80px;
+}
+
+/* ─── Room Card ─── */
+.rp-card {
+  position:relative; background:#fff;
+  border:1px solid #ede8de; display:flex; flex-direction:column;
+  transition:box-shadow .3s,transform .3s;
+}
+.rp-card:hover { box-shadow:0 16px 48px rgba(27,42,74,.12); transform:translateY(-4px); }
+
+.rp-tag {
+  position:absolute; top:16px; left:16px; z-index:3;
+  background:#C9A84C; color:#fff;
+  font-size:.6rem; letter-spacing:.18em; text-transform:uppercase;
+  padding:5px 12px; font-family:'PallavaNum','Georgia',serif;
+}
+
+.rp-card-visual {
+  height:220px; position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.rp-card-visual-content { text-align:center; color:rgba(255,255,255,.5); position:relative; z-index:1; }
+.rp-visual-icon { font-size:2rem; display:block; margin-bottom:6px; }
+.rp-card-visual-content p { font-size:.75rem; letter-spacing:.1em; }
+.rp-card-visual-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,.3) 0%,transparent 60%); }
+
+.rp-card-body { padding:24px; display:flex; flex-direction:column; flex:1; }
+
+.rp-card-meta { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; }
+.rp-card-meta span { font-size:.72rem; color:#9ca3af; letter-spacing:.03em; }
+
+.rp-card-title { font-size:1.2rem; font-weight:400; color:#1B2A4A; margin-bottom:4px; }
+.rp-card-floor { font-size:.75rem; color:#C9A84C; letter-spacing:.06em; margin-bottom:10px; text-transform:uppercase; }
+.rp-card-desc { font-size:.88rem; color:#6b7280; line-height:1.7; margin-bottom:16px; }
+
+.rp-card-amenities { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
+.rp-amenity-chip { font-size:.68rem; color:#4a5568; background:#f5f0e8; padding:4px 10px; border-radius:20px; }
+.rp-amenity-chip.more { color:#C9A84C; background:#fdf6e8; }
+
+.rp-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:16px; border-top:1px solid #f5f0e8; gap:12px; flex-wrap:wrap; }
+
+.rp-price-block { display:flex; align-items:baseline; gap:4px; }
+.rp-price-from,.rp-price-night { font-size:.7rem; color:#9ca3af; }
+.rp-price { font-size:1.4rem; color:#1B2A4A; }
+
+.rp-card-actions { display:flex; gap:8px; }
+.rp-btn-details {
+  text-decoration:none; padding:9px 16px; font-size:.7rem;
+  letter-spacing:.1em; text-transform:uppercase; color:#1B2A4A;
+  border:1.5px solid #1B2A4A; transition:all .25s;
+}
+.rp-btn-details:hover { background:#1B2A4A; color:#fff; }
+.rp-btn-book {
+  text-decoration:none; padding:9px 16px; font-size:.7rem;
+  letter-spacing:.1em; text-transform:uppercase; background:#C9A84C; color:#fff;
+  border:1.5px solid #C9A84C; transition:all .25s;
+}
+.rp-btn-book:hover { background:#b8933f; }
+
+/* ─── Single room wrap ─── */
+.rp-single-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.rp-card-single {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ─── Slider (RoomsPage) ─── */
+.rp-slider {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  background: #1B2A4A;
+  flex-shrink: 0;
+}
+
+.rp-slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s;
+}
+
+.rp-slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.rp-slider-btn:hover { background: rgba(201,168,76,0.85); }
+.rp-slider-btn.prev { left: 14px; }
+.rp-slider-btn.next { right: 14px; }
+
+.rp-slider-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  z-index: 4;
+}
+
+.rp-slider-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.rp-slider-dot.active { background: #C9A84C; }
+
+.rp-slider-count {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  z-index: 4;
+  font-family: 'PallavaNum', 'Georgia', serif;
+}
+
+/* ─── Badges ─── */
+.rp-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.rp-badge {
+  font-size: 0.72rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  background: #1B2A4A;
+  color: #fff;
+  letter-spacing: 0.04em;
+  font-family: 'PallavaNum', 'Georgia', serif;
+}
+
+/* ─── Price block (dual weekday/weekend) ─── */
+.rp-price-block {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.rp-price-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.rp-price-label {
+  font-size: 0.68rem;
+  color: #9ca3af;
+  font-family: 'PallavaNum', 'Georgia', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  min-width: 68px;
+}
+
+/* ─── Bottom CTA ─── */
+.rp-bottom-cta { background:#1B2A4A; padding:64px 60px; }
+.rp-bottom-cta-inner { max-width:600px; margin:0 auto; text-align:center; }
+.rp-bottom-cta h3 { font-size:1.8rem; font-weight:400; color:#fff; margin-bottom:12px; }
+.rp-bottom-cta p { color:rgba(255,255,255,.65); font-size:.95rem; line-height:1.7; margin-bottom:32px; }
+.rp-cta-btns { display:flex; gap:16px; justify-content:center; }
+.rp-cta-call,.rp-cta-wa {
+  text-decoration:none; padding:14px 32px; font-size:.8rem;
+  letter-spacing:.14em; text-transform:uppercase; font-weight:600; border-radius:2px; transition:all .3s;
+}
+.rp-cta-call { background:#C9A84C; color:#fff; }
+.rp-cta-call:hover { background:#b8933f; }
+.rp-cta-wa { background:transparent; color:#C9A84C; border:2px solid #C9A84C; }
+.rp-cta-wa:hover { background:#C9A84C; color:#fff; }
+
+/* ─── Footer strip ─── */
+.rp-footer-strip {
+  background:#060e1a; padding:18px 60px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.rp-footer-strip p { font-size:.75rem; color:rgba(255,255,255,.3); }
+.rp-footer-strip a { font-size:.75rem; color:#C9A84C; text-decoration:none; }
+
+/* ─── Responsive ─── */
+@media(max-width:1100px){
+  .rp-grid{ grid-template-columns:repeat(2,1fr); }
+  .rp-nav{ padding:12px 32px; }
+}
+
+@media(max-width:768px){
+  .rp-nav{ padding:12px 20px; }
+  .rp-nav-links{ display:none; }
+
+  .rp-hero{ height:260px; }
+  .rp-hero-breadcrumb{ left:24px; }
+
+  .rp-filter-bar{ flex-direction:column; align-items:flex-start; gap:16px; padding:20px 24px; }
+  .rp-results-info{ padding:16px 24px 0; }
+
+  .rp-grid{ grid-template-columns:repeat(2,1fr); gap:20px; padding:24px 24px 60px; }
+
+  .rp-bottom-cta{ padding:48px 24px; }
+  .rp-cta-btns{ flex-direction:column; align-items:center; gap:12px; }
+  .rp-cta-call,.rp-cta-wa{ width:100%; max-width:320px; text-align:center; }
+
+  .rp-footer-strip{ padding:16px 24px; }
+}
+
+@media(max-width:480px){
+  .rp-hero{ height:220px; }
+  .rp-hero-title{ font-size:clamp(1.6rem,7vw,2.4rem); }
+
+  .rp-grid{ grid-template-columns:1fr; padding:20px 16px 48px; }
+
+  .rp-sort{ flex-direction:column; align-items:flex-start; gap:6px; }
+
+  .rp-card-actions{ flex-direction:column; gap:6px; }
+  .rp-btn-details,.rp-btn-book{ text-align:center; width:100%; }
+
+  .rp-bottom-cta{ padding:36px 16px; }
+}
+
+@media(max-width:360px){
+  .rp-nav{ padding:10px 12px; }
+  .rp-nav-logo{ height:48px; }
+  .rp-book-btn{ padding:8px 14px; font-size:.7rem; }
+
+  .rp-filter-bar{ padding:16px; }
+  .rp-cat-btn{ padding:7px 14px; font-size:.72rem; }
+}
+
+/* ── Extra-small: 320px ── */
+@media(max-width:320px){
+  .rp-nav{ padding:8px 10px; }
+  .rp-nav-logo{ height:44px; }
+  .rp-book-btn{ padding:7px 10px; font-size:.68rem; letter-spacing:.08em; }
+
+  .rp-hero{ height:180px; }
+  .rp-hero-title{ font-size:1.4rem; }
+  .rp-hero-breadcrumb{ left:12px; font-size:.68rem; }
+
+  .rp-filter-bar{ padding:12px; gap:12px; }
+  .rp-cat-btn{ padding:6px 12px; font-size:.7rem; }
+  .rp-results-info{ padding:12px 12px 0; }
+
+  .rp-grid{ padding:16px 10px 40px; gap:16px; }
+
+  .rp-card-body{ padding:16px; }
+  .rp-card-title{ font-size:1rem; }
+
+  .rp-bottom-cta{ padding:28px 10px; }
+  .rp-bottom-cta h3{ font-size:1.4rem; }
+  .rp-cta-call,.rp-cta-wa{ max-width:100%; }
+
+  .rp-footer-strip{ padding:12px; flex-direction:column; gap:6px; text-align:center; }
+}
