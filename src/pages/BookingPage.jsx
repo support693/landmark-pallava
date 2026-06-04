@@ -9,7 +9,7 @@ import logoImg from '../assets/logo.jpeg'
 import './BookingPage.css'
 
 const STEPS = ['Stay Details', 'Guest Info', 'Confirm & Send']
-const WA_NUMBER = '916383698878'
+const WA_NUMBER = '919940040372'
 
 function fmtDate(date) {
   if (!date) return '—'
@@ -383,7 +383,7 @@ export default function BookingPage() {
           <div className="bp-help-card">
             <p>Questions? We're here.</p>
             <a href="tel:+919688290594">&#128222; +91 96882 90594</a>
-            <a href="https://wa.me/916383698878" target="_blank" rel="noreferrer">&#128172; WhatsApp Us</a>
+            <a href="https://wa.me/919940040372" target="_blank" rel="noreferrer">&#128172; WhatsApp Us</a>
           </div>
         </aside>
       </div>
@@ -413,7 +413,7 @@ function SentScreen({ room, guest, checkIn, checkOut, nights, total }) {
         </div>
         <div className="bp-confirm-actions">
           <Link to="/" className="bp-confirm-home">Back to Home</Link>
-          <a href={`https://wa.me/916383698878`} target="_blank" rel="noreferrer" className="bp-confirm-call">
+          <a href={`https://wa.me/919940040372`} target="_blank" rel="noreferrer" className="bp-confirm-call">
             &#128172; Open WhatsApp
           </a>
         </div>
