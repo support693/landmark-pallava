@@ -57,7 +57,7 @@ export default function Rooms() {
             </div>
 
             <h3 className="room-name">{room.type}</h3>
-            <p className="room-occupancy">&#128100; Max {room.occupancy.adults} Adults &nbsp;·&nbsp; Kids stay FREE</p>
+            <p className="room-occupancy">&#128100; 2 Adults &nbsp;·&nbsp; Children below 5 yrs FREE</p>
 
             <ul className="room-amenities">
               {room.amenities.map(a => (

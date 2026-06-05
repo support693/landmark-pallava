@@ -4,7 +4,7 @@ const amenities = [
   { icon: '🏖️', title: 'Private Beach', desc: 'Exclusive beachfront access with sun loungers and cabanas' },
   { icon: '♾️', title: 'Infinity Pool', desc: 'Temperature-controlled pool overlooking the Bay of Bengal' },
   { icon: '🧖', title: 'Luxury Spa', desc: 'Holistic treatments inspired by ancient Pallava wellness traditions' },
-  { icon: '🍽️', title: 'Fine Dining', desc: 'Three signature restaurants serving coastal and international cuisine' },
+  { icon: '🍽️', title: 'Fine Dining', desc: 'One signature restaurant serving coastal and international cuisine' },
   { icon: '🏋️', title: 'Fitness Centre', desc: 'State-of-the-art gym with personal training services' },
   { icon: '🎾', title: 'Sports Courts', desc: 'Tennis, badminton and indoor games for active guests' },
   { icon: '🚤', title: 'Water Sports', desc: 'Kayaking, snorkelling, jet ski and boat rides available' },

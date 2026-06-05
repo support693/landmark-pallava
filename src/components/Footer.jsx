@@ -6,7 +6,7 @@ export default function Footer() {
     <>
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/919688290594"
+        href="https://wa.me/918939944400"
         className="whatsapp-fab"
         target="_blank"
         rel="noreferrer"
@@ -79,11 +79,15 @@ export default function Footer() {
               </li>
               <li>
                 <span>📞</span>
-                <a href="tel:+919688290594">+91 96882 90594</a>
+                <a href="tel:+919940040372">+91 99400 40372</a>
+              </li>
+              <li>
+                <span>☎️</span>
+                <a href="tel:+914427444095">+91 44 2744 4095</a>
               </li>
               <li>
                 <span>✉️</span>
-                <a href="mailto:reservations@landmarkpallavaresort.com">reservations@landmarkpallavaresort.com</a>
+                <a href="mailto:landmarkpallava2025@gmail.com">landmarkpallava2025@gmail.com</a>
               </li>
               <li>
                 <span>🕐</span>

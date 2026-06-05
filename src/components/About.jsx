@@ -25,8 +25,8 @@ const highlights = [
 ]
 
 const pillars = [
-  { num: '72+', label: 'Luxury Rooms & Suites' },
-  { num: '3', label: 'Signature Restaurants' },
+  { num: '40+', label: 'Luxury Rooms & Suites' },
+  { num: '1', label: 'Signature Restaurant' },
   { num: '15+', label: 'Years of Excellence' },
   { num: '10K+', label: 'Happy Guests' },
 ]

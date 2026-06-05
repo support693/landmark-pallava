@@ -85,7 +85,7 @@ export default function GalleryPage() {
           <li><a className="active">Gallery</a></li>
           <li><a href="/#contact">Contact</a></li>
         </ul>
-        <a href="tel:+919688290594" className="gp-book-btn">📞 Book Now</a>
+        <a href="tel:+919940040372" className="gp-book-btn">📞 Book Now</a>
       </nav>
 
       {/* Hero */}

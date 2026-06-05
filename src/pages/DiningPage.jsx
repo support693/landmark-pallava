@@ -351,7 +351,7 @@ export default function DiningPage() {
           </div>
           <div className="dp-res-actions">
             <button className="dp-res-btn-primary" onClick={() => setCartOpen(true)}>🛒 Order to Room</button>
-            <a href="tel:+919688290594" className="dp-res-btn-outline">📞 Call Front Desk</a>
+            <a href="tel:+919940040372" className="dp-res-btn-outline">📞 Call Front Desk</a>
           </div>
         </div>
       </div>

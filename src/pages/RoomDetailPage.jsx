@@ -88,8 +88,8 @@ export default function RoomDetailPage() {
           {/* Contact */}
           <div className="rd-contact-card">
             <p>Need assistance?</p>
-            <a href="tel:+919688290594">&#128222; +91 96882 90594</a>
-            <a href="https://wa.me/919688290594" target="_blank" rel="noreferrer">&#128172; WhatsApp</a>
+            <a href="tel:+919940040372">&#128222; +91 99400 40372</a>
+            <a href="https://wa.me/918939944400" target="_blank" rel="noreferrer">&#128172; WhatsApp</a>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export default function RoomDetailPage() {
             <span>&#128196; {room.size}</span>
             <span>&#127795; {room.view}</span>
             <span>&#128716; {room.bed}</span>
-            <span>&#128100; Max {room.occupancy.adults} Adults</span>
+            <span>&#128100; 2 Adults &nbsp;·&nbsp; Children below 5 FREE</span>
           </div>
 
           <div className="rd-badges">

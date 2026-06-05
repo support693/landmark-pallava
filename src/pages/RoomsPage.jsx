@@ -68,7 +68,7 @@ export default function RoomsPage() {
             <div className="rp-card-meta">
               <span>&#128196; {room.size}</span>
               <span>&#127795; {room.view}</span>
-              <span>&#128100; Max {room.occupancy.adults} Adults</span>
+              <span>&#128100; 2 Adults · Children below 5 FREE</span>
               <span>&#128716; {room.bed}</span>
             </div>
 
@@ -118,8 +118,8 @@ export default function RoomsPage() {
           <h3>Ready to book your stay?</h3>
           <p>Our reservations team is happy to help you with any questions.</p>
           <div className="rp-cta-btns">
-            <a href="tel:+919688290594" className="rp-cta-call">&#128222; Call Us</a>
-            <a href="https://wa.me/919688290594" className="rp-cta-wa" target="_blank" rel="noreferrer">&#128172; WhatsApp</a>
+            <a href="tel:+919940040372" className="rp-cta-call">&#128222; Call Us</a>
+            <a href="https://wa.me/918939944400" className="rp-cta-wa" target="_blank" rel="noreferrer">&#128172; WhatsApp</a>
           </div>
         </div>
       </div>

@@ -94,7 +94,7 @@ export default function Hero() {
 
           <div className="hero-stats">
             <div className="stat">
-              <span className="stat-num">72+</span>
+              <span className="stat-num">40+</span>
               <span className="stat-label">Luxury Rooms</span>
             </div>
             <div className="stat-divider" />

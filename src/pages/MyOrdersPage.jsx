@@ -150,7 +150,7 @@ export default function MyOrdersPage() {
       {/* Footer */}
       <div className="mo-footer">
         <p>© {new Date().getFullYear()} Landmark Pallavaa Beach Resort &amp; Spa. All rights reserved.</p>
-        <a href="tel:+919688290594">📞 Front Desk: +91 96882 90594</a>
+        <a href="tel:+919940040372">📞 Enquiry: +91 99400 40372</a>
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ import logoImg from '../assets/logo.jpeg'
 import './BookingPage.css'
 
 const STEPS = ['Stay Details', 'Guest Info', 'Confirm & Send']
-const WA_NUMBER = '919940040372'
+const WA_NUMBER = '918939944400'
 
 function fmtDate(date) {
   if (!date) return '—'
@@ -22,7 +22,7 @@ function isWeekend(date) {
   return d === 0 || d === 5 || d === 6
 }
 
-function buildWAMessage({ room, checkIn, checkOut, nights, nightlyRate, subtotal, tax, total, guest, guests }) {
+function buildWAMessage({ room, checkIn, checkOut, nights, nightlyRate, subtotal, roomTax, serviceCharge, gstOnService, total, guest, guests }) {
   return `◆ *Booking Request – Landmark Pallavaa*
 
 ◆ *Room Details*
@@ -40,7 +40,9 @@ Email: ${guest.email}${guest.requests ? `\nRequests: ${guest.requests}` : ''}
 ◆ *Pricing*
 Rate: Rs.${nightlyRate.toLocaleString('en-IN')}/night (${isWeekend(checkIn) ? 'Weekend' : 'Weekday'})
 Subtotal: Rs.${subtotal.toLocaleString('en-IN')}
-GST (18%): Rs.${tax.toLocaleString('en-IN')}
+Tax (5%): Rs.${roomTax.toLocaleString('en-IN')}
+Service Charge (5%): Rs.${serviceCharge.toLocaleString('en-IN')}
+GST on Service Charge (18%): Rs.${gstOnService.toLocaleString('en-IN')}
 *Total: Rs.${total.toLocaleString('en-IN')}*
 
 Please confirm this booking. Thank you!`
@@ -88,11 +90,13 @@ export default function BookingPage() {
     fetchBookings()
   }, [room.slug])
 
-  const nights      = checkIn && checkOut ? Math.max(1, Math.round((checkOut - checkIn) / 86400000)) : 1
-  const nightlyRate = isWeekend(checkIn) ? room.priceWeekend : room.priceWeekday
-  const subtotal    = nightlyRate * nights
-  const tax         = Math.round(subtotal * 0.18)
-  const total       = subtotal + tax
+  const nights          = checkIn && checkOut ? Math.max(1, Math.round((checkOut - checkIn) / 86400000)) : 1
+  const nightlyRate     = isWeekend(checkIn) ? room.priceWeekend : room.priceWeekday
+  const subtotal        = nightlyRate * nights
+  const roomTax         = Math.round(subtotal * 0.05)
+  const serviceCharge   = Math.round(subtotal * 0.05)
+  const gstOnService    = Math.round(serviceCharge * 0.18)
+  const total           = subtotal + roomTax + serviceCharge + gstOnService
 
   const handleGuest = e => setGuest(g => ({ ...g, [e.target.name]: e.target.value }))
   const step1Valid  = !!(checkIn && checkOut && checkOut > checkIn)
@@ -119,7 +123,7 @@ export default function BookingPage() {
       })
     } catch (_) { /* non-blocking */ }
 
-    const msg = buildWAMessage({ room, checkIn, checkOut, nights, nightlyRate, subtotal, tax, total, guest, guests })
+    const msg = buildWAMessage({ room, checkIn, checkOut, nights, nightlyRate, subtotal, roomTax, serviceCharge, gstOnService, total, guest, guests })
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank')
     setSending(false)
     setSent(true)
@@ -137,7 +141,7 @@ export default function BookingPage() {
           <Link to={`/rooms/${room.slug}`}>{room.type}</Link><span>/</span>
           <span>Book Now</span>
         </div>
-        <a href="tel:+919688290594" className="bp-nav-help">&#128222; Need Help?</a>
+        <a href="tel:+919940040372" className="bp-nav-help">&#128222; Need Help?</a>
       </nav>
 
       <div className="bp-layout">
@@ -196,7 +200,7 @@ export default function BookingPage() {
                   <span>{guests} {guests === 1 ? 'Guest' : 'Guests'}</span>
                   <button type="button" onClick={() => setGuests(g => Math.min(room.occupancy.adults, g + 1))}>+</button>
                 </div>
-                <p className="bp-field-note">Max occupancy: {room.occupancy.adults} adults</p>
+                <p className="bp-field-note">Max 2 adults per room &nbsp;·&nbsp; Children below 5 years stay FREE</p>
               </div>
 
               {step1Valid && (
@@ -308,7 +312,9 @@ export default function BookingPage() {
                 <div className="bp-cs-divider" />
                 <div className="bp-cs-price-rows">
                   <div className="bp-cs-price-row"><span>&#8377;{nightlyRate.toLocaleString('en-IN')} &times; {nights} night{nights > 1 ? 's' : ''}</span><span>&#8377;{subtotal.toLocaleString('en-IN')}</span></div>
-                  <div className="bp-cs-price-row"><span>GST &amp; Taxes (18%)</span><span>&#8377;{tax.toLocaleString('en-IN')}</span></div>
+                  <div className="bp-cs-price-row"><span>Tax (5%)</span><span>&#8377;{roomTax.toLocaleString('en-IN')}</span></div>
+                  <div className="bp-cs-price-row"><span>Service Charge (5%)</span><span>&#8377;{serviceCharge.toLocaleString('en-IN')}</span></div>
+                  <div className="bp-cs-price-row"><span>GST on Service Charge (18%)</span><span>&#8377;{gstOnService.toLocaleString('en-IN')}</span></div>
                   <div className="bp-cs-price-total"><span>Total</span><span>&#8377;{total.toLocaleString('en-IN')}</span></div>
                 </div>
               </div>
@@ -363,8 +369,16 @@ export default function BookingPage() {
                   <span>&#8377;{subtotal.toLocaleString('en-IN')}</span>
                 </div>
                 <div className="bp-pb-row">
-                  <span>GST &amp; Taxes (18%)</span>
-                  <span>&#8377;{tax.toLocaleString('en-IN')}</span>
+                  <span>Tax (5%)</span>
+                  <span>&#8377;{roomTax.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="bp-pb-row">
+                  <span>Service Charge (5%)</span>
+                  <span>&#8377;{serviceCharge.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="bp-pb-row">
+                  <span>GST on Service Charge (18%)</span>
+                  <span>&#8377;{gstOnService.toLocaleString('en-IN')}</span>
                 </div>
                 <div className="bp-summary-divider" />
                 <div className="bp-pb-total">
@@ -382,8 +396,8 @@ export default function BookingPage() {
           </div>
           <div className="bp-help-card">
             <p>Questions? We're here.</p>
-            <a href="tel:+919688290594">&#128222; +91 96882 90594</a>
-            <a href="https://wa.me/919940040372" target="_blank" rel="noreferrer">&#128172; WhatsApp Us</a>
+            <a href="tel:+919940040372">&#128222; +91 99400 40372</a>
+            <a href="https://wa.me/918939944400" target="_blank" rel="noreferrer">&#128172; WhatsApp Us</a>
           </div>
         </aside>
       </div>
@@ -413,7 +427,7 @@ function SentScreen({ room, guest, checkIn, checkOut, nights, total }) {
         </div>
         <div className="bp-confirm-actions">
           <Link to="/" className="bp-confirm-home">Back to Home</Link>
-          <a href={`https://wa.me/919940040372`} target="_blank" rel="noreferrer" className="bp-confirm-call">
+          <a href={`https://wa.me/918939944400`} target="_blank" rel="noreferrer" className="bp-confirm-call">
             &#128172; Open WhatsApp
           </a>
         </div>
