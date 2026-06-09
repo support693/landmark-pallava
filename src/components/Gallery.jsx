@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import beach1   from '../assets/gallery/Beach.png'
 import pool1    from '../assets/gallery/Pool.png'
 import room1    from '../assets/gallery/Room.png'
-import lawn1    from '../assets/gallery/Lawn.png'
 import dining   from '../assets/gallery/Dinning.png'
 import resort1  from '../assets/gallery/Resort Veiw.png'
 import hall1    from '../assets/gallery/Hall.png'
@@ -18,7 +17,6 @@ const cells = [
   { label:'Resort View',     img: resort1, span:''      },
   { label:'Banquet Hall',    img: hall1,   span:'wide'  },
   { label:'Fine Dining',     img: dining,  span:''      },
-  { label:'Garden Lawn',     img: lawn1,   span:''      },
 ]
 
 export default function Gallery() {
