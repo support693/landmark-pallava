@@ -5,7 +5,6 @@ import logoImg from '../assets/logo.jpeg'
 import beach1   from '../assets/gallery/Beach.png'
 import beach2   from '../assets/gallery/Beach 2.png'
 import dining   from '../assets/gallery/Dinning.png'
-import event    from '../assets/gallery/Event.png'
 import ground   from '../assets/gallery/Ground.png'
 import hall1    from '../assets/gallery/Hall.png'
 import hall2    from '../assets/gallery/Hall 2.png'
@@ -41,7 +40,6 @@ const photos = [
   { id:8,  src:room2,    cat:'Rooms',    title:'Suite Interior',            span:'' },
   { id:9,  src:lawn1,    cat:'Grounds',  title:'Garden Lawn',               span:'' },
   { id:10, src:hall1,    cat:'Events',   title:'Banquet Hall',              span:'wide' },
-  { id:11, src:event,    cat:'Events',   title:'Event Setup',               span:'' },
   { id:12, src:hall2,    cat:'Events',   title:'Conference Hall',           span:'' },
   { id:13, src:statue1,  cat:'Heritage', title:'Pallava Heritage Statue',   span:'' },
   { id:14, src:lawn2,    cat:'Grounds',  title:'Lawn View',                 span:'' },
